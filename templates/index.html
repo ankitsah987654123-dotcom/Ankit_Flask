@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Student Pass/Fail Prediction</title>
+</head>
+<body>
+ <h2>Student Pass/Fail Prediction</h2>
+ <form method="post">
+ Study Hours per Week:
+ <input type="number" name="study_hours" step="0.1"
+ value="{{ study_hours }}" required><br><br>
+ Attendance Percentage:
+ <input type="number" name="attendance" step="0.1"
+ value="{{ attendance }}" required><br><br>
+ <button type="submit">Predict</button>
+ </form>
+ {% if prediction %}
+ <h3>Prediction Result: {{ prediction }}</h3>
+ <p>
+ Based on:
+ Study Hours = {{ study_hours }},
+ Attendance = {{ attendance }}%
+ </p>
+ {% endif %}
+</body>
+</html>
